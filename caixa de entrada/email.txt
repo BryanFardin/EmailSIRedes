@@ -1,0 +1,10 @@
+----------------
+ De:teste@furg.br
+ Para: matheus@furg.br
+ Assunto: teste de envio
+ Mensagem: olá, isto é um teste de email
+----------------
+ De:matheus@furg.br
+ Para: teste@furg.br
+ Assunto: teste
+ Mensagem: isso é um teste
