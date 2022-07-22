@@ -51,34 +51,36 @@ def main(): # Função principal
             print("Enviando e-mail")
             opcao = "enviar"
             tcp.sendall(opcao.encode()) # Envia a opção para o servidor
-            
+        
             data = tcp.recv(1024) # Recebe dados do cliente e armazena em data (1024 é o tamanho do buffer)
             data = data.decode()
-            print(data)
-        
-            if data == "Para quem você deseja enviar: ":
-                email_envia = input(data)
+
+            if data == 'destinatario':
+                marcador = 'envio1'
+                tcp.sendall(marcador.encode())
+                email_envia = input('Destinatario: ')
                 tcp.sendall(email_envia.encode())
 
             data = tcp.recv(1024) # Recebe dados do cliente e armazena em data (1024 é o tamanho do buffer)
             data = data.decode()
-            print(data)
 
-            if data == "Escreva o Assunto: ":
-                assunto = input(data)
+            if data == 'assunto':
+                marcador = 'envio2'
+                tcp.sendall(marcador.encode())
+                assunto = input('Assunto: ')
                 tcp.sendall(assunto.encode())
-            
+
             data = tcp.recv(1024) # Recebe dados do cliente e armazena em data (1024 é o tamanho do buffer)
             data = data.decode()
-            print(data)
 
-            if data == "Escreva a mensagem: ":
-                mensagem = input(data)
+            if data == 'mensagem':
+                marcador = 'envio3'
+                tcp.sendall(marcador.encode())
+                mensagem = input('mensagem: ')
                 tcp.sendall(mensagem.encode())
 
-            data = tcp.recv(1024) # Recebe dados do cliente e armazena em data (1024 é o tamanho do buffer)
-            data = data.decode()
-            print(data)
+            print('email enviado')
+
 
 
 

@@ -25,6 +25,7 @@ def main(): # Função principal
             data = data.decode()
             global alt            
             alt = data
+            global auxemail
             
 
             print(alt)
@@ -45,22 +46,32 @@ def main(): # Função principal
 
             elif data == "enviar": # Se a opção for 2 entra no if e envia o e-mail
                 print("Enviando e-mail")
-                #conn.sendall(enviar_email().encode()) # Envia a opção para o servidor
-                global altaux
-
-                altaux = "email_envia"
+                conn.sendall(enviar_email().encode()) # Envia a opção para o servidor
+                #global auxemail
                 
-                if altaux == "email_envia":
-                    conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
-                    altaux = "assunto"
+            elif data == 'envio1':
+                #global auxemail
+                auxemail = "envio1"
+                enviar_email().encode()
+            
+            elif data == 'envio2':
+                #global auxemail
+                auxemail = "envio2"
+                enviar_email().encode()
 
-                if altaux == "assunto":
-                    conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
-                    altaux = "mensagem"
-
-                if altaux == "mensagem":
-                    conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
-                    altaux = "finalizado"
+            elif data == 'envio3':
+                #global auxemail
+                auxemail = "envio3"
+                enviar_email().encode()
+                #if auxemail == "email_envia":
+                    #conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
+                    #altaux = "assunto"
+                #if auxemail == "assunto":
+                    #conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
+                    #altaux = "mensagem"
+                #if auxemail == "mensagem":
+                    #conn.sendall(enviar_email().encode()) # Usuário que recebe o e-mail
+                    #altaux = "finalizado"
                 
 
 
@@ -120,31 +131,27 @@ def enviar_email(): # Função para enviar e-mail
     global de
     de = log.usuario # Usuário logado
     
-    if altaux == "email_envia":
+    if auxemail == "envio1":
         global email_envia
         email_envia = alt # Destinatario do e-mail
-        texto = "Para quem você deseja enviar: "
-        return texto
+        return email_envia
 
 
-    if altaux == "assunto":
+    if auxemail == "envio1":
         global assunto
         assunto = alt # Assunto do e-mail
-        texto = "Escreva o Assunto: "
-        return texto
+        return assunto
     
     
-    if altaux == "mensagem":
+    if auxemail == "envio1":
         global mensagem
         mensagem = alt # Mensagem do e-mail
-        texto = "Escreva a mensagem: "
-        return texto
+        return mensagem
     
-    if altaux == "finalizado":
+    if auxemail == "finalizado":
         email.write("----------------\n De:{}\n Para: {}\n Assunto: {}\n Mensagem: {}\n".format(de, email_envia, assunto, mensagem)) # Escreve no arquivo
         print("E-mail enviado")
         email.close() # Fecha o arquivo
-        texto = "E-mail enviado"
-        return texto
+        return email
 
 main()
