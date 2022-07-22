@@ -1,0 +1,35 @@
+----------------
+ De:teste@furg.br
+ Para: matheus@furg.br
+ Assunto: teste de envio
+ Mensagem: ol�, isto � um teste de email
+----------------
+ De:matheus@furg.br
+ Para: teste@furg.br
+ Assunto: teste
+ Mensagem: isso � um teste
+----------------
+ De:bryan
+ Para: teste
+ Assunto: teste
+ Mensagem: isso � um teste
+----------------
+ De:teste
+ Para: bryan
+ Assunto: teste
+ Mensagem: isso � um teste
+----------------
+ De:bryan
+ Para: teste
+ Assunto: teste
+ Mensagem: isso � um teste
+----------------
+ De:teste
+ Para: test1
+ Assunto: test2
+ Mensagem: test3
+----------------
+ De:teste
+ Para: verificar
+ Assunto: s
+ Mensagem: 2
