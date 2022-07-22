@@ -1,4 +1,15 @@
 # Serviço de email usando Sockets em Py TCP (Cliente-Servidor) 
 Serviço de e-mail cliente - servidor utilizando sockets
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?CBEBF77E3EFA700E69923DF7C157B78CC30D
+Integrantes: Bryan Fardin, Matheus Estima
+
+Em primeiro lugar executar o servidor.py
+logo em seguida executar o cliente.py
+
+bibliotecas necessarias: socket
+
+instalação: basta extrair o zip em alguma pasta
+
+Caso queira conta para teste: 
+usuario: teste 
+senha: 123
