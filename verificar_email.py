@@ -5,21 +5,26 @@ def verificar_email(): # Função para verificar e-mail
         linha = email.readlines() # Le o arquivo
         cont = 0 # Contador
         usuario = log.usuario # Usuário logado
-        for i in linha:
+        if data == "contador":
+            for i in linha:
 
-            if 'Para: '+usuario+'\n' in i: # Verifica se o usuário tem e-mail
-                cont += 1
-        texto = f"""Você tem {cont} e-mails
+                if 'Para: '+usuario+'\n' in i: # Verifica se o usuário tem e-mail
+                    cont += 1
+            texto = f"""
+            Você tem {cont} e-mails
 
-        ----------------
-        "Deseja visualizar um e-mail? (s/n)"""
-        return texto
-        opcao = input()
-        if opcao == "s": # Se o usuário desejar visualizar um e-mail
-            print("----------------")
-            print("Digite o número do e-mail que deseja visualizar")
-            numero = int(input())
-            print("----------------")
+            ----------------
+
+            Deseja visualizar um e-mail? (s/n)
+            """
+            return texto
+        
+        if data == "s": # Se o usuário desejar visualizar um e-mail
+            texto = """
+            Digite o número do e-mail que deseja visualizar
+            """
+            return texto
+
             for i in range(len(linha)):
                 if 'Para: '+usuario+'\n' in linha[i]: # mostra pro usuario seus e-mail
                     for j in linha:
@@ -27,10 +32,8 @@ def verificar_email(): # Função para verificar e-mail
                             print(j) # Mostra a pessoa que enviou o e-mail
                             print(linha[numero+1]) # Mostra para quem é o e-mail
                             print(linha[numero+2]) # Mostra o assunto do e-mail
-                            print(linha[numero+3]) # Mostra a mensagem do e-mail
-                            print("----------------")                            
+                            print(linha[numero+3]) # Mostra a mensagem do e-mail                         
                     if linha == '':
-                        print("----------------")
                         break
             
             
